@@ -166,7 +166,7 @@ public class PublicMqttActivity extends AppBaseActivity implements View.OnClickL
             }
             MqttDevice device = MqttManager.getInstance().getDevice(deviceId);
             if (device != null) {
-                device.sendMessage(data);
+                device.sendMessage(data.getBytes());
                 addLog("发送数据:" + data + " 设备:" + deviceId);
             } else {
                 addLog("设备不存在或者未连接:" + deviceId);

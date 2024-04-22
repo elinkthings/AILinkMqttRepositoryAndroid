@@ -11108,10 +11108,12 @@ com.elinkthings.elinkmqttlib.mqtt.MqttDevice:
     private static final int REMOVE_MESSAGE_KEY
     private static final int SEND_MESSAGE_KEY
     public java.lang.String getDeviceId()
+    public long getSendInterval()
     public java.lang.String getTopic()
     public void removeOnMqttOtherMessageListener(com.elinkthings.elinkmqttlib.listener.OnMqttOtherMessageListener)
     public void setOnMqttRawMessageListener(com.elinkthings.elinkmqttlib.listener.OnMqttRawMessageListener)
     public void setRetryCount(int)
+    public void setSendInterval(long)
 com.elinkthings.elinkmqttlib.mqtt.MqttManager:
     public void clear()
     public void clearDevice()

@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 3.1.66
 # min_api: 24
-# pg_map_id: 7fac9ae
+# pg_map_id: a16d0b1
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"1.0"}
 android.support.v4.app.RemoteActionCompatParcelizer -> android.support.v4.app.RemoteActionCompatParcelizer:
@@ -19360,9 +19360,9 @@ com.elinkthings.elinkmqttlib.mqtt.MqttDevice -> m1.c:
     213:221:void notifyData(java.lang.String,byte[],int) -> n
     170:209:void onMessage(java.lang.String,byte[]) -> o
     275:278:void removeOnMqttMessageListener(com.elinkthings.elinkmqttlib.listener.OnMqttMessageListener) -> p
-    81:90:void sendMessage(java.lang.String) -> q
+    81:90:void sendMessage(byte[]) -> q
     105:161:void sendQueuedMessage() -> r
-    320:321:void setOnA7EncryptionListener(com.elinkthings.elinkmqttlib.mqtt.MqttDevice$OnA7EncryptionListener) -> s
+    330:331:void setOnA7EncryptionListener(com.elinkthings.elinkmqttlib.mqtt.MqttDevice$OnA7EncryptionListener) -> s
 com.elinkthings.elinkmqttlib.mqtt.MqttDevice$1 -> m1.c$a:
     com.elinkthings.elinkmqttlib.mqtt.MqttDevice this$0 -> a
     54:54:void <init>(com.elinkthings.elinkmqttlib.mqtt.MqttDevice,android.os.Looper) -> <init>
