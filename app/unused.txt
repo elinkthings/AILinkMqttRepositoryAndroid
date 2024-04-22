@@ -11095,8 +11095,13 @@ com.elinkthings.elinkmqttlib.config.MqttConfig:
     public static final byte SEND_MCU_END
     public static final byte SEND_MCU_START
     public void <init>()
-    public static void initMqttConf(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    public static void initGroupIdAndTopicId(java.lang.String,java.lang.String)
+    public static void initMqttConf(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    public static void initUrlAndPost(java.lang.String,java.lang.String)
+    public static void setInstanceId(java.lang.String)
+    public static void setMqttConnectTimeOutMs(long)
 com.elinkthings.elinkmqttlib.config.MqttErrCodeConfig
+com.elinkthings.elinkmqttlib.mqtt.BaseMqttDeviceData
 com.elinkthings.elinkmqttlib.mqtt.MqttCheckUtil:
     public void <init>()
     static boolean checkReturnDataFormat(byte[])
@@ -11104,13 +11109,19 @@ com.elinkthings.elinkmqttlib.mqtt.MqttCheckUtil:
     static byte[] returnBleDataFormat(byte[])
     public static byte[] sendMcuDataFormat(int,byte[])
     public static byte[] sendMcuDataFormat(byte[],byte[])
+com.elinkthings.elinkmqttlib.mqtt.MqttDevice$3
 com.elinkthings.elinkmqttlib.mqtt.MqttDevice:
     private static final int REMOVE_MESSAGE_KEY
     private static final int SEND_MESSAGE_KEY
+    private static final int SEND_MESSAGE_KEY_NOW
     public java.lang.String getDeviceId()
+    public java.util.LinkedList getMessageQueue()
     public long getSendInterval()
     public java.lang.String getTopic()
     public void removeOnMqttOtherMessageListener(com.elinkthings.elinkmqttlib.listener.OnMqttOtherMessageListener)
+    public void sendDataNow(byte[])
+    private void sendMqttMessage(org.eclipse.paho.client.mqttv3.MqttMessage)
+    public void setMessageQueue(java.util.LinkedList)
     public void setOnMqttRawMessageListener(com.elinkthings.elinkmqttlib.listener.OnMqttRawMessageListener)
     public void setRetryCount(int)
     public void setSendInterval(long)

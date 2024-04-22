@@ -111,7 +111,7 @@ public class PublicMqttActivity extends AppBaseActivity implements View.OnClickL
     }
 
     @Override
-    public void onSendFailure(String topic, String deviceId, byte[] payload) {
+    public void onSendFailure(String topic, String deviceId, byte[] payload, int errCode,int retryCount) {
         addLog("设备ID:" + deviceId + " 发送消息失败:" + BleStrUtils.byte2HexStr(payload));
     }
 
@@ -166,7 +166,7 @@ public class PublicMqttActivity extends AppBaseActivity implements View.OnClickL
             }
             MqttDevice device = MqttManager.getInstance().getDevice(deviceId);
             if (device != null) {
-                device.sendMessage(data.getBytes());
+                device.sendData(data.getBytes());
                 addLog("发送数据:" + data + " 设备:" + deviceId);
             } else {
                 addLog("设备不存在或者未连接:" + deviceId);

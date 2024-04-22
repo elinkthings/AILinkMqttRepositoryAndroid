@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 3.1.66
 # min_api: 24
-# pg_map_id: a16d0b1
+# pg_map_id: 40ef5ec
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"1.0"}
 android.support.v4.app.RemoteActionCompatParcelizer -> android.support.v4.app.RemoteActionCompatParcelizer:
@@ -19272,7 +19272,7 @@ com.elinkthings.ailinkmqttdemo.PublicMqttActivity -> com.elinkthings.ailinkmqttd
     28:28:void access$000(com.elinkthings.ailinkmqttdemo.PublicMqttActivity,java.lang.String) -> k0
     120:121:void onOtherMessage(java.lang.String,java.lang.String,byte[]) -> l
     213:216:void addLog(java.lang.String) -> l0
-    115:116:void onSendFailure(java.lang.String,java.lang.String,byte[]) -> m
+    115:116:void onSendFailure(java.lang.String,java.lang.String,byte[],int,int) -> m
     202:205:void refreshDeviceList() -> m0
     105:106:void onMessage(java.lang.String,java.lang.String,int,byte[]) -> o
     125:175:void onClick(android.view.View) -> onClick
@@ -19291,20 +19291,21 @@ com.elinkthings.ailinkmqttdemo.PublicMqttActivity$1$1 -> com.elinkthings.ailinkm
 com.elinkthings.ailinkmqttdemo.TimeUtils -> j1.c:
     19:20:java.lang.String getTimeSSS() -> a
 com.elinkthings.elinkmqttlib.config.MqttConfig -> k1.a:
-    java.lang.String TOPIC_ID -> g
-    long MQTT_CONNECT_TIME_OUT_MS -> j
-    java.lang.String GROUP_ID -> f
-    java.lang.String TOPIC_PREFIX_RECEIVE -> i
-    java.lang.String TOPIC_PREFIX_SEND -> h
+    java.lang.String GROUP_ID -> g
+    java.lang.String SECRET_KEY -> f
+    java.lang.String TOPIC_PREFIX_SEND -> i
+    java.lang.String TOPIC_ID -> h
+    long MQTT_CONNECT_TIME_OUT_MS -> k
+    java.lang.String TOPIC_PREFIX_RECEIVE -> j
     java.lang.String CLIENT_ID -> a
-    java.lang.String INSTANCE_ID -> c
-    java.lang.String SERVER_URI -> b
-    java.lang.String SECRET_KEY -> e
-    java.lang.String ACCESS_KEY -> d
-    23:35:void <clinit>() -> <clinit>
-    62:65:java.lang.String getDeviceId(java.lang.String) -> a
-    76:79:java.lang.String getTopicReceive(java.lang.String) -> b
-    89:92:java.lang.String getTopicSend(java.lang.String) -> c
+    java.lang.String SERVER_URI -> c
+    java.lang.String POST -> b
+    java.lang.String ACCESS_KEY -> e
+    java.lang.String INSTANCE_ID -> d
+    23:36:void <clinit>() -> <clinit>
+    80:83:java.lang.String getDeviceId(java.lang.String) -> a
+    94:97:java.lang.String getTopicReceive(java.lang.String) -> b
+    107:110:java.lang.String getTopicSend(java.lang.String) -> c
 com.elinkthings.elinkmqttlib.listener.OnMqttConnectListener -> l1.a:
     void onConnecting() -> a
     void onDisconnect(int) -> b
@@ -19313,7 +19314,7 @@ com.elinkthings.elinkmqttlib.listener.OnMqttConnectListener -> l1.a:
     void onSubscribeFail(java.lang.String[]) -> e
 com.elinkthings.elinkmqttlib.listener.OnMqttMessageListener -> l1.b:
     void onSendSuccess(java.lang.String,java.lang.String,byte[]) -> h
-    void onSendFailure(java.lang.String,java.lang.String,byte[]) -> m
+    void onSendFailure(java.lang.String,java.lang.String,byte[],int,int) -> m
     void onMessage(java.lang.String,java.lang.String,int,byte[]) -> o
 com.elinkthings.elinkmqttlib.listener.OnMqttOtherMessageListener -> l1.c:
     19:19:void onOtherMessage(java.lang.String,java.lang.String,byte[]) -> l
@@ -19332,18 +19333,19 @@ com.elinkthings.elinkmqttlib.mqtt.EiotMqttOption -> m1.a:
 com.elinkthings.elinkmqttlib.mqtt.MqttCheckUtil -> m1.b:
     112:120:byte[] returnMcuDataFormat(byte[]) -> a
 com.elinkthings.elinkmqttlib.mqtt.MqttDevice -> m1.c:
-    java.util.List mOnMqttOtherMessageListeners -> f
+    long mSendInterval -> i
+    com.elinkthings.elinkmqttlib.listener.OnMqttRawMessageListener mOnMqttRawMessageListener -> h
+    java.util.List mOnMqttMessageListeners -> f
+    int mRetryCount -> j
     org.eclipse.paho.android.service.MqttAndroidClient mMqttAndroidClient -> c
-    java.util.List mOnMqttMessageListeners -> e
-    com.elinkthings.elinkmqttlib.listener.OnMqttRawMessageListener mOnMqttRawMessageListener -> g
-    long mSendInterval -> h
-    int mRetryCount -> i
     java.util.LinkedList mMessageQueue -> d
-    com.elinkthings.elinkmqttlib.mqtt.MqttDevice$OnA7EncryptionListener mOnA7EncryptionListener -> k
+    java.util.LinkedList mMessageQueueNow -> e
     java.lang.String mTopic -> a
+    java.util.List mOnMqttOtherMessageListeners -> g
+    com.elinkthings.elinkmqttlib.mqtt.MqttDevice$OnA7EncryptionListener mOnA7EncryptionListener -> l
+    android.os.Handler mHandler -> k
     java.lang.String mDeviceId -> b
-    android.os.Handler mHandler -> j
-    47:78:void <init>(org.eclipse.paho.android.service.MqttAndroidClient,java.lang.String) -> <init>
+    49:84:void <init>(org.eclipse.paho.android.service.MqttAndroidClient,java.lang.String) -> <init>
     32:32:java.util.LinkedList access$000(com.elinkthings.elinkmqttlib.mqtt.MqttDevice) -> a
     32:32:void access$100(com.elinkthings.elinkmqttlib.mqtt.MqttDevice) -> b
     32:32:android.os.Handler access$200(com.elinkthings.elinkmqttlib.mqtt.MqttDevice) -> c
@@ -19352,27 +19354,27 @@ com.elinkthings.elinkmqttlib.mqtt.MqttDevice -> m1.c:
     32:32:java.lang.String access$500(com.elinkthings.elinkmqttlib.mqtt.MqttDevice) -> f
     32:32:long access$600(com.elinkthings.elinkmqttlib.mqtt.MqttDevice) -> g
     32:32:int access$700(com.elinkthings.elinkmqttlib.mqtt.MqttDevice) -> h
-    256:262:void addOnMqttMessageListener(com.elinkthings.elinkmqttlib.listener.OnMqttMessageListener) -> i
-    265:271:void addOnMqttOtherMessageListener(com.elinkthings.elinkmqttlib.listener.OnMqttOtherMessageListener) -> j
-    295:305:void clear() -> k
-    292:292:void disconnect() -> l
-    227:236:boolean isAlreadyConnected() -> m
-    213:221:void notifyData(java.lang.String,byte[],int) -> n
-    170:209:void onMessage(java.lang.String,byte[]) -> o
-    275:278:void removeOnMqttMessageListener(com.elinkthings.elinkmqttlib.listener.OnMqttMessageListener) -> p
-    81:90:void sendMessage(byte[]) -> q
-    105:161:void sendQueuedMessage() -> r
-    330:331:void setOnA7EncryptionListener(com.elinkthings.elinkmqttlib.mqtt.MqttDevice$OnA7EncryptionListener) -> s
+    341:347:void addOnMqttMessageListener(com.elinkthings.elinkmqttlib.listener.OnMqttMessageListener) -> i
+    350:356:void addOnMqttOtherMessageListener(com.elinkthings.elinkmqttlib.listener.OnMqttOtherMessageListener) -> j
+    380:390:void clear() -> k
+    377:377:void disconnect() -> l
+    312:321:boolean isAlreadyConnected() -> m
+    298:306:void notifyData(java.lang.String,byte[],int) -> n
+    255:294:void onMessage(java.lang.String,byte[]) -> o
+    360:363:void removeOnMqttMessageListener(com.elinkthings.elinkmqttlib.listener.OnMqttMessageListener) -> p
+    87:94:void sendData(byte[]) -> q
+    116:183:void sendQueuedMqttMessage() -> r
+    437:438:void setOnA7EncryptionListener(com.elinkthings.elinkmqttlib.mqtt.MqttDevice$OnA7EncryptionListener) -> s
 com.elinkthings.elinkmqttlib.mqtt.MqttDevice$1 -> m1.c$a:
     com.elinkthings.elinkmqttlib.mqtt.MqttDevice this$0 -> a
-    54:54:void <init>(com.elinkthings.elinkmqttlib.mqtt.MqttDevice,android.os.Looper) -> <init>
-    57:69:void handleMessage(android.os.Message) -> handleMessage
+    56:56:void <init>(com.elinkthings.elinkmqttlib.mqtt.MqttDevice,android.os.Looper) -> <init>
+    59:74:void handleMessage(android.os.Message) -> handleMessage
 com.elinkthings.elinkmqttlib.mqtt.MqttDevice$2 -> m1.c$b:
     com.elinkthings.elinkmqttlib.mqtt.MqttDevice this$0 -> b
     org.eclipse.paho.client.mqttv3.MqttMessage val$mqttMessage -> a
-    114:114:void <init>(com.elinkthings.elinkmqttlib.mqtt.MqttDevice,org.eclipse.paho.client.mqttv3.MqttMessage) -> <init>
-    135:151:void onFailure(org.eclipse.paho.client.mqttv3.IMqttToken,java.lang.Throwable) -> a
-    119:129:void onSuccess(org.eclipse.paho.client.mqttv3.IMqttToken) -> b
+    124:124:void <init>(com.elinkthings.elinkmqttlib.mqtt.MqttDevice,org.eclipse.paho.client.mqttv3.MqttMessage) -> <init>
+    144:173:void onFailure(org.eclipse.paho.client.mqttv3.IMqttToken,java.lang.Throwable) -> a
+    129:139:void onSuccess(org.eclipse.paho.client.mqttv3.IMqttToken) -> b
 com.elinkthings.elinkmqttlib.mqtt.MqttDevice$OnA7EncryptionListener -> m1.c$c:
     byte[] onA7Encryption(int,byte[],byte[]) -> a
 com.elinkthings.elinkmqttlib.mqtt.MqttManager -> m1.e:
