@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace 'com.elinkthings.ailinkmqttdemo'
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.elinkthings.ailinkmqttdemo"
         minSdk 21
-        targetSdk 34
-        versionCode 110
-        versionName "1.1.0"
+        targetSdk 33
+        versionCode 111
+        versionName "1.1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -38,9 +38,9 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
